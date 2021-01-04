@@ -3,20 +3,22 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/log/level"
-	"github.com/nokrPOC/internal/config"
-	"github.com/nytimes/gizmo/server/kit"
-	"golang.org/x/oauth2"
-	"golang.org/x/oauth2/google"
 	"net/http"
 	"os"
+
+	"github.com/go-kit/kit/log"
+	"github.com/go-kit/kit/log/level"
+	kithttp "github.com/go-kit/kit/transport/http"
+	"github.com/nokrPOC/internal/config"
+	"github.com/nytimes/gizmo/server/kit"
 	"github.com/nytm/messaging-helix-business-api/business"
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
 )
 
 type HermesService struct {
 	helixClient *buisness.BusinessApiClient
-	config *config.HermesServiceConfig
+	config      *config.HermesServiceConfig
 	Logger
 }
 
@@ -37,7 +39,7 @@ func NewService(ctx context.Context, config *config.HermesServiceConfig) (*Herme
 	// logger is attached to the service but request scoped logger should be obtained from
 	// the context.
 	logger := serviceLog{lg, lgClose}
-	return &HermesService{helixClient, config, loggger}, nil
+	return &HermesService{helixClient, config, &logger}, nil
 }
 
 // emailClient returns a client for helix email sending. The client is
