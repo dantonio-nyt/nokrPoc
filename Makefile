@@ -2,7 +2,7 @@ export GO111MODULE=on
 export CGO_ENABLED=0
 
 GO_CMD=go
-BUILD_OPTS=-v -mod=vendor
+BUILD_OPTS=-v -mod=vendor -ldflags "-X main.githubRevision=$(GIT_SHORT_REV)"
 PKG_NAME=github.com/nokrPOC
 BUILD_PREFIX=hermes-
 API_TARGET_NAME=worker
