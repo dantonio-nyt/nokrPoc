@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8e97aa2-7ba2-4cbd-8b3f-e788ca014c45" name="Default Changelist" comment="" />
+    <list default="true" id="a8e97aa2-7ba2-4cbd-8b3f-e788ca014c45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/nokrPOC.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.local.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/api/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/handlers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/modules/email.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/routes.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/AUTHORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/middleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/mux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/regexp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/route.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/gorilla/mux/test_helpers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/MAINTAINERS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/env_os.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/env_syscall.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/envconfig.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/kelseyhightower/envconfig/usage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/internal/service/modules/email.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -61,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="90">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -91,6 +128,9 @@
     </leaf>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.15.6/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -99,18 +139,19 @@
         <option value="$PROJECT_DIR$/internal/service/service.go" />
         <option value="$PROJECT_DIR$/internal/service/handlers.go" />
         <option value="$PROJECT_DIR$/cmd/api/main.go" />
-        <option value="$PROJECT_DIR$/internal/service/modules/email.go" />
         <option value="$PROJECT_DIR$/internal/service/routes.go" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/internal/service/modules/email.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="329" />
-    <option name="y" value="91" />
+    <option name="x" value="104" />
+    <option name="y" value="53" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -185,8 +226,7 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="329" y="91" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="749" y="40" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -235,13 +275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/internal/service/modules/email.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="89" column="5" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/internal/service/handlers.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -278,8 +311,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="90">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/service/modules/email.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="89" column="5" selection-end-line="126" />
         </state>
       </provider>
     </entry>
