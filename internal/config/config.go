@@ -3,9 +3,10 @@ package config
 import "github.com/kelseyhightower/envconfig"
 
 type HermesServiceConfig struct {
-	Env   string `envconfig:"ENV"`
-	Port  string `envconfig:"PORT" default:"8080"`
-	Helix HelixConfig
+	Env       string `envconfig:"ENV"`
+	Port      string `envconfig:"PORT" default:"8080"`
+	ProjectID string `envconfig:"PROJECT_ID"`
+	Helix     HelixConfig
 }
 
 type HelixConfig struct {
