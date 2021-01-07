@@ -1,59 +1,58 @@
 package modules
 
 import (
-	"encoding/json"
+	"cloud.google.com/go/pubsub"
+	"context"
 	"fmt"
-	"github.com/nokrPOC/internal/service"
-	"net/http"
+	"github.com/nokrPOC/internal/config"
+	"io"
+	"log"
 )
 
-type PubSubService struct {
-	Logger
+type Handler interface {
+	PullMsgs(w io.Writer, projectID, subID string) error
 }
 
-func NewBugSubService() {
-	return PubSubService{}
-}
-// pushRequest is the expect format of the message
-// received from PubSub.
-type pushRequest struct {
-	Message struct {
-		Attributes map[string]string
-		Data       []byte
-		ID         string `json:"messageId"`
-	}
-	Subscription string
+type PubSubHandler struct {
+	config *config.HermesServiceConfig
 }
 
-// pushHandler handles push requests from PubSub, receiving the
-// message and forwarding the email. Requests must contain
-// the configured token.
-func (s PubSubService) pushHandler(w http.ResponseWriter, r *http.Request) {
+func NewPubSubService(config *config.HermesServiceConfig) *PubSubHandler{
+	return &PubSubHandler{config}
+}
 
-	l := getLogger(r.Context())
-
-	// Verify the token.
-	if r.URL.Query().Get("token") != s.config.PubSubVerificationToken {
-		http.Error(w, "bad token", http.StatusUnauthorized)
-		return
-	}
-
-	if r.Body == nil {
-		http.Error(w, "missing request body", http.StatusBadRequest)
-		return
-	}
-
-	// Get the message
-	msg := &pushRequest{}
-	if err := json.NewDecoder(r.Body).Decode(msg); err != nil {
-		http.Error(w, fmt.Sprintf("could not decode body: %v", err), http.StatusBadRequest)
-		return
-	}
-
-	// Send email
-	err := s.sendFPAEmail(msg.Message.Data)
+func (p *PubSubHandler) PullMsgs() error {
+	projectId := p.config.ProjectID
+	subID := p.config.SubID
+	ctx := context.Background()
+	client, err := pubsub.NewClient(ctx, projectId)
 	if err != nil {
-		l.logError(err.Error())
-		http.Error(w, "email send failure", http.StatusInternalServerError)
+		return fmt.Errorf("pubsub.NewClient: %v", err)
 	}
+	defer client.Close()
+
+	sub := client.Subscription(subID)
+
+	// Create a channel to handle messages to as they come in.
+	cm := make(chan *pubsub.Message)
+	defer close(cm)
+
+	// Handle individual messages in a goroutine.
+	go func() {
+		for msg := range cm {
+			log.Printf("msg: %+v", string(msg.Data))
+			// This is where we need to unpack and get the data to craft the email
+			msg.Ack()
+		}
+	}()
+
+	// Receive blocks until the context is cancelled or an error occurs.
+	err = sub.Receive(ctx, func(ctx context.Context, msg *pubsub.Message) {
+		cm <- msg
+	})
+	if err != nil {
+		return fmt.Errorf("Receive: %v", err)
+	}
+
+	return nil
 }

@@ -6,6 +6,7 @@ type HermesServiceConfig struct {
 	Env       string `envconfig:"ENV"`
 	Port      string `envconfig:"PORT" default:"8080"`
 	ProjectID string `envconfig:"PROJECT_ID"`
+	SubID     string `envconfig:"SUB_ID"`
 	Helix     HelixConfig
 }
 

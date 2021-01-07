@@ -3,13 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
-	"net/http"
-
 	"github.com/nokrPOC/internal/config"
 	"github.com/nokrPOC/internal/service"
-
-	"github.com/gorilla/mux"
+	"log"
 )
 
 func main() {
@@ -24,11 +20,8 @@ func main() {
 		panic(fmt.Sprintf("failed to start service %v", err))
 	}
 
-	router := mux.NewRouter()
-	HermesService.SetupRoutes(router)
-	log.Printf("Listing on port: %s", serviceConfig.Port)
-	err = http.ListenAndServe(":"+ serviceConfig.Port, router)
+	err = HermesService.StartListeningForMessages()
 	if err != nil {
-		panic(fmt.Sprintf("unable to serve %s", err))
+		panic(fmt.Sprintf("failed to start listening %v", err))
 	}
 }
